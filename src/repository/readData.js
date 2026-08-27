@@ -19,3 +19,12 @@ export const readData = async () => {
     throw error;
   }
 }
+
+export const writeData = async (data) => {
+  try {
+    await fs.promises.writeFile(pathToDataFile, JSON.stringify(data, null, 2), 'utf-8');
+  } catch (error) {
+    console.error('Error writing data:', error);
+    throw error;
+  }
+};
