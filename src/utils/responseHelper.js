@@ -1,3 +1,4 @@
+//Tách các hàm hỗ trợ lặp đi lặp lại (như việc gửi response) để code gọn gàng
 export const sendSuccess = (res, statusCode = 200, message = 'Success', data = null) => {
     const response = {
         success: true,
