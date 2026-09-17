@@ -5,25 +5,30 @@ class apiError extends Error {
         this.name = this.constructor.name;
     }
 }
-export class badRequestError extends apiError {
+export class BadRequestError extends apiError {
     constructor(message = 'Bad request'){
         super(400, message);
     }
 }
-export class unauthorizedError extends apiError {
+export class UnauthorizedError extends apiError {
     constructor(message = 'Unauthorized'){
         super(401, message);
     }
 }
-export class forbiddenError extends apiError {
+export class ForbiddenError extends apiError {
     constructor(message = 'Forbidden'){
         super(403, message);
     }
 }
-export class notFoundError extends apiError {
+export class NotFoundError extends apiError {
     constructor(message = 'Not Found'){
         super(404, message);
     }
+}
+export class ConflictError extends apiError {
+  constructor(message = 'Conflict') {
+    super(409, message);
+  }
 }
 
 export default apiError;

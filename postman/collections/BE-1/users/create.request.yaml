@@ -1,4 +1,8 @@
 $kind: http-request
-url: ""
-method: GET
+name: create
+url: "{{local}}/users/2"
+method: DELETE
+body:
+  type: json
+  content: ""
 order: 1899476507116850

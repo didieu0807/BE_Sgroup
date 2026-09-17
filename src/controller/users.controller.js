@@ -1,7 +1,7 @@
 import * as usersService from "../service/users.service.js"
 import catchAsync from "../utils/catchAsync.js";
 import { sendSuccess } from '../utils/responseHelper.js';
-import { notFoundError } from '../core/error.response.js';
+import { NotFoundError } from '../core/error.response.js';
 
 export const getAllUsers = catchAsync( async(req, res) => {
     const users = await usersService.getAllUsers();
