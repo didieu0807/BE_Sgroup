@@ -8,12 +8,13 @@ import {connectDB} from "./src/config/db.config.js";
 const app = express(); //khởi tạo 1 đối tượng ứng dụng
 app.use(express.json()); //1 dạng middleware - đọc dữ liệu từ file json của người dùng
 app.use("/", router) // đăng kí router vào đường dẫn chính, mọi link bắt đầu từ / sẽ chuyển qua router.js xử lí
-
-app.use(errorHandler) // đăng kí middleware xử lí lỗi
+app.use(express.urlencoded({ extended: true }));
 
 app.use((req, res, next) => {
   next(new NotFoundError(`Resource ${req.originalUrl} not found`));
 });
+
+app.use(errorHandler) // đăng kí middleware xử lí lỗi
 
 const startServer = async () => {
     await connectDB(); // Kết nối đến cơ sở dữ liệu 
